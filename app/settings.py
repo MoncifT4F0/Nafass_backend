@@ -28,10 +28,16 @@ SECRET_KEY = 'django-insecure-+w8-%sf0=mae&sscanpna0(hf!ht_5ybmhk*e_e#hz-3pmlu$_
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-# ALLOWED_HOSTS = []
-ALLOWED_HOSTS = ['your-app-name.up.railway.app', 'localhost', '127.0.0.1']
+CSRF_TRUSTED_ORIGINS = [
+    'https://nafassbackend-production.up.railway.app',
+    # Add other domains if needed (e.g., your custom domain)
+]
 
-
+# Also set ALLOWED_HOSTS (required for security)
+ALLOWED_HOSTS = [
+    'nafassbackend-production.up.railway.app',
+    '127.0.0.1',  # For local testing
+]
 # Application definition
 
 INSTALLED_APPS = [
@@ -96,7 +102,7 @@ WSGI_APPLICATION = 'app.wsgi.application'
 
 DATABASES = {
     'default': dj_database_url.config(
-        default='postgresql://postgres:ICzjaqMEGsVjbodGepwqnmRQGJAkuXzu@postgres.railway.internal:5432/railway',
+        default='postgresql://postgres:ICzjaqMEGsVjbodGepwqnmRQGJAkuXzu@shinkansen.proxy.rlwy.net:10755/railway',
         conn_max_age=600,
         ssl_require=True,
     )
