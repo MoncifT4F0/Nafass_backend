@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     'rest_framework_swagger',
     'drf_yasg',
     'authApp',
+    'corsheaders'.
 ]
 
 MIDDLEWARE = [
@@ -63,6 +64,12 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
+]
+
+CORS_ALLOWED_ORIGIN_REGEXES = [
+    r"^http://localhost:\d+$",
+    r"^http://127\.0\.0\.1\d+$"
 ]
 
 ROOT_URLCONF = 'app.urls'
