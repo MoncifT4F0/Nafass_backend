@@ -38,6 +38,7 @@ ALLOWED_HOSTS = [
     'nafassbackend-production.up.railway.app',
     '127.0.0.1',  # For local testing
     'localhost:3001',
+    'https://web.postman.co',
 ]
 # Application definition
 
